@@ -8,9 +8,59 @@
 		= javascript_include_tag :defaults
 		= csrf_meta_tag
   %body
-		#flashes
-		  - flash.each do |key, value|
-		    #flash
-		      = html_escape(value)
-		
-		= yield
+		= render :partial => "flashes"
+		.page-header-wrap
+			.page-header
+				#logo
+				#phone
+				#statements
+			
+		.border		
+		.page-content-wrap
+			.page-content
+				.special.columns
+					.special-header
+						%h3 Отзывы наших клиентов
+					.column.x1
+						.special-photo
+						.special-content
+							.special-content-name
+							.special-content-title
+							.special-content-quote
+				= yield
+				.columns
+					.column.x1
+						.pixel-car.big_blue
+						%h4 Срочно нужна помощь
+						%p ...
+						= image_button "btn_fill-request.png"
+					.column.x1
+						.pixel-car.pretty_red
+						%h4 Как до нас добраться
+						%p ...
+					.column.x1
+						.pixel-car.little_salate
+						%h4 Мы в соцмедиа
+						%p Следите за нашими новостями.
+						.social_bar
+							
+			
+		.page-footer-wrap
+			.page-footer
+				.columns
+					.column.x1
+						%ul
+							%li 
+								Электропочта:
+								= mail_to "support@samaraparts.ru"
+							%li
+								= link_to "Адреса и телефоны". ""
+					.made_by.column.x1
+						Site by
+						= link_to "Adam Miribyan", "http://adammiribyan.com"
+						%small 2011
+					copyright.column.x1
+						©
+						= year
+						ООО «Автомастер»
+						
