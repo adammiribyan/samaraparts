@@ -1,6 +1,11 @@
 Samaraparts::Application.routes.draw do	
-  get "signup" => "users#new", :as => :signup
+  get "login" => "sessions#new", :as => "login"
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "signup" => "users#new", :as => "signup"  
+  
 	resources :users  
-  root :to => "welcome#index"
+	resources :sessions
 
+	root :to => "welcome#index"
+	
 end

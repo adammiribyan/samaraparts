@@ -3,7 +3,17 @@ class User < ActiveRecord::Base
 	before_save :encrypt_password
 
 	validates :login, :presence => true, :uniqueness => true
-	validates :password, :presence => true, :confirmation => true
+	validates_presence_of :password, :on => :create
+	validates :password, :confirmation => true
+	
+	def self.authenticate(login, password)
+		user = find_by_login(login)
+		if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+			user
+		else
+			nil
+		end
+	end
 
 	def encrypt_password
 		if password.present?

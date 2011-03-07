@@ -1,0 +1,8 @@
+- title "Вход"
+
+%h1 Вход
+
+= simple_form_for :session, :url => sessions_path do |f|
+	= f.input :login, :label => "Логин", :required => false
+	= f.input :password, :label => "Пароль", :as => :password, :required => false
+	= f.submit "Войти"

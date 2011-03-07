@@ -76,7 +76,9 @@
 
 		
 		.page-content-wrap
-			.page-content				
+			.page-content	
+				- if current_user
+					= link_to "Выйти", logout_path		
 				= yield
 			
 		.page-footer-wrap
