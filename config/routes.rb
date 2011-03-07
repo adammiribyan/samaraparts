@@ -1,10 +1,12 @@
-Samaraparts::Application.routes.draw do	
+Samaraparts::Application.routes.draw do
+	# Authentication
   get "login" => "sessions#new", :as => "login"
   get "logout" => "sessions#destroy", :as => "logout"
   get "signup" => "users#new", :as => "signup"  
   
 	resources :users  
 	resources :sessions
+	resources :feedbacks
 
 	root :to => "welcome#index"
 	
