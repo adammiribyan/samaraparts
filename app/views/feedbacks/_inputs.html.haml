@@ -1,0 +1,7 @@
+= simple_form_for(@feedback) do |f|
+  .inputs
+    = f.input :full_name, :label => "Имя и фамилия", :required => false
+    = f.input :title, :label => "Должность и место работы", :required => false
+    = f.input :body, :label => "Содержание", :required => false
+  .actions
+    = f.submit "Сохранить"

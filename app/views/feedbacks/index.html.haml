@@ -1,23 +1,25 @@
-%h1 Listing feedbacks
+- title "Все отзывы"
+
+%h1 Все отзывы
 
 %table
-  %tr
-    %th Full name
-    %th Title
-    %th Body
-    %th
-    %th
-    %th
-
-  - @feedbacks.each do |feedback|
+  %thead
     %tr
-      %td= feedback.full_name
-      %td= feedback.title
-      %td= feedback.body
-      %td= link_to 'Show', feedback
-      %td= link_to 'Edit', edit_feedback_path(feedback)
-      %td= link_to 'Destroy', feedback, :confirm => 'Are you sure?', :method => :delete
+      %th{:width => "15%"} Имя
+      %th{:width => "20%"} Должность
+      %th{:width => "55%"} Содержание
+      %th{:width => "10%"}
+  %tbody
+    - @feedbacks.each do |feedback|
+      %tr
+        %td= feedback.full_name
+        %td= feedback.title
+        %td= feedback.body
+        %td
+          = link_to 'Изменить', edit_feedback_path(feedback), :style => "color: #060;"
+          %br/
+          = link_to 'Удалить', feedback, :style => "color: red;", :confirm => 'Вы уверены?', :method => :delete
 
 %br
 
-= link_to 'New Feedback', new_feedback_path
+= link_to 'Новый отзыв', new_feedback_path

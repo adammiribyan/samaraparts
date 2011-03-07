@@ -89,6 +89,61 @@ form.simple_form {
 	}
 }
 
+table { 
+	font-size: 1.083em; 
+	line-height: 1.516; 
+	margin-top: 1.3333em;
+	width: 70%;
+	border-spacing: 0px 0px;
+	border-collapse: collapse;
+	empty-cells: show;			
+
+	td { 
+		padding: .5em 2em 0 0; 
+
+		h3 { 
+			font-style: italic; 
+			margin-bottom: -1em; }			
+	}
+
+	td.last, th.last { padding-right: 0; }
+
+	tbody {	
+		overflow: auto !important;		
+		tr.emphasized { background-color: #fffdea; }
+		tr {
+			cursor: pointer;
+
+			td { 
+				padding: 15px 0px 15px 0px;
+				vertical-align: baseline; }
+			td.digits { 
+				text-align: right; 
+				padding-right: 40px; }			
+		}
+
+		tr.highlight {
+			td, th { background: #fff9b8; }
+		}
+
+		tr.highligh:hover {
+			td, th { background: #f2f2e5; }
+		}
+	}
+
+	th {
+		padding: 0 2em .6em 0; 
+		font-style: italic; 
+		border-bottom: 1px solid #ddd;
+
+		span {
+			margin: 0; 
+			padding: 0;
+			background: none;
+		}
+	}
+}
+
 p, div, ul, ul li, form {
 	zoom: 1;
 }
