@@ -2306,3 +2306,43 @@ function roundPicture(blocks) {
 $(function() {
     roundPicture($('.round_picture'));
 });
+
+/*   Copyright (c) 2010, Diaspora Inc.  This file is
+*   licensed under the Affero General Public License version 3 or later.  See
+*   the COPYRIGHT file.
+*/
+var View = {
+  initialize: function() {
+    /* Animate flashes */
+    this.flashes.animate();
+
+    /* facebox */
+    // $.facebox.settings.closeImage = '/images/facebox/closelabel.png'
+    // $.facebox.settings.loadingImage = '/images/facebox/loading.gif'
+    // $('a[rel*=facebox]').facebox();
+  },
+
+  flashes: {
+    animate: function() {
+      var $this = $(View.flashes.selector);
+      $this.animate({
+        top: 0
+      }).delay(2000).animate({
+        top: -100
+      }, $this.remove)
+    },
+    render: function(result) {
+      $("<div/>")
+        .attr("id", (result.success) ? "flash_notice" : "flash_error")
+        .prependTo(document.body)
+        .html(result.notice);
+      View.flashes.animate();
+    },
+    selector: "#flash_notice, #flash_error, #flash_alert"
+  }
+};
+
+$(function() {
+  /* Make sure this refers to View, not the document */
+  View.initialize.apply(View);
+});
