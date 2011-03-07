@@ -1,0 +1,332 @@
+@import "shared/reset.css";
+
+html { background-color: #f6f6f6; }
+
+html, body { 
+	width: 100%; 
+	height: 100%;
+}
+
+body {
+  font-size: 12px;
+  font-family: 'PFAgoraSansProRegular', Arial, sans-serif;
+  position: relative;
+  background-image: url(/images/d.gif);
+	background-attachment: fixed;
+	color: #222;
+}
+
+p, div, ul, ul li, form {
+	zoom: 1;
+}
+
+@blue: #00a5e5;
+
+a:link, a:visited {
+	color: @blue;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+p {
+  font-size: 1em; /* 12px */
+  line-height: 1.5em; /* 18px */
+  margin: 0 0 1.5em 0;
+}
+/* 24px - The quick brown fox jumps over the lazy dog */
+h1 {
+  font-size: 2em; /* 24px */
+  line-height: 1.5em; /* 36px */
+  margin-top: 0.75em;
+  margin-bottom: 0em;
+}
+/* 22px - The quick brown fox jumps over the lazy dog */
+h2 {
+  font-size: 1.8333em; /* 22px */
+  line-height: 1.6364em; /* 36px */
+  margin-top: 0.8182em;
+  margin-bottom: 0em;
+}
+/* 20px - The quick brown fox jumps over the lazy dog */
+h3 {
+  font-size: 1.6667em; /* 20px */
+  line-height: 1.8em; /* 36px */
+  margin-top: 0.9em;
+  margin-bottom: 0em;
+}
+/* 18px - The quick brown fox jumps over the lazy dog */
+h4 {
+  font-size: 1.5em; /* 18px */
+  line-height: 1em; /* 18px */
+  margin-top: 1em;
+  margin-bottom: 0em;
+}
+/* 16px - The quick brown fox jumps over the lazy dog */
+h5 {
+  font-size: 1.3333em; /* 16px */
+  line-height: 1.125em; /* 18px */
+  margin-top: 1.125em;
+  margin-bottom: 0em;
+}
+/* 14px - The quick brown fox jumps over the lazy dog */
+h6 {
+  font-size: 1.1667em; /* 14px */
+  line-height: 1.2857em; /* 18px */
+  margin-top: 1.2857em;
+  margin-bottom: 0em;
+}
+
+.page-header-wrap, .page-content-wrap, .page-special-wrap, .page-footer-wrap {
+	width: 100%;		
+	min-width: 980px;
+	position: relative;
+	overflow: hidden;
+}
+
+.page-header, .page-special, .page-content, .page-footer {
+	padding-left: 60px;
+	position: relative;
+	min-width: 980px;
+	max-width: 1400px;
+}
+
+.page-header-wrap {
+	background-color: black;
+	min-height: 310px;
+	
+	.page-header {
+		background: black url("/images/super-car.png") no-repeat right top;
+		padding: 35px 0 0 0;
+		height: 310px;
+		
+		#logo, #statements { margin-left: 60px; }
+		
+		#logo {
+			background: black url('/images/logo.png') no-repeat left top;
+			height: 58px;
+			width: 163px;
+			position: relative;
+		}
+		
+		#phone {
+			position: absolute;
+			width: 20%;
+			top: 35px;
+			left: 30%;
+			
+			h4 { 
+				color: @blue; 
+				margin-top: 0;
+			}
+			span {
+				position: block;
+				color: white;
+				font-size: 2em; /* 24px */
+			  line-height: 1.5em; /* 36px */
+			  margin-top: 0.75em;
+			  margin-bottom: 0em;
+			}			
+		}
+		
+		#statements {
+			margin-top: 2.5em;			
+			position: relative; 
+			
+			h1 {
+				color: @blue;
+				margin-top: 0.75em;
+			}
+			ul {
+				color: white;
+				font-size: 1.3333em; /* 16px */
+			  margin-bottom: 0em;
+			  
+				li {
+					font-family: 'PFAgoraSansProLight', Arial, sans-serif;
+					line-height: 1.125em; /* 18px */
+			  	margin-top: .625em;
+					list-style: decimal outside;
+				}
+			}
+		}
+	}
+}
+
+.border {
+	background: url("/images/border_blue.png");
+	height: 3px;
+	position: relative;
+	overflow: hidden;
+}
+
+.columns {
+	position: relative;
+	clear: left;
+	zoom: 1;
+	
+	.column {
+		float: left;
+		position: relative;
+		zoom: 1;
+		
+		.inner {
+			margin-right: 1.3333em;
+		}
+	}
+	
+	.x1 { width: 33%; }
+}
+
+.columns:after {
+	clear: both;
+	content: '';
+	display: block;
+	height: 0;
+}
+
+.page-special, .page-content, .page-footer { padding: 0.9em 60px 2.7em; }
+
+.page-special-wrap {
+	background: #ecede5 url("/images/bg_sub-header.jpg") repeat;
+	border-bottom: 1px solid #ddd;
+	
+	.page-special {		
+		.special-header {
+			margin-bottom: 1.8em;
+			
+			h3 {
+				margin-top: 0;
+			}
+		}
+		
+		.special-photo {
+			position: absolute;
+			left: 0;
+			height: 58px;
+			width: 58px;
+		}
+		
+		.special-content {
+			position: relative;
+			margin-left: 65px;
+			
+			.special-content-name {
+				h6 { 
+					margin-top: 0.25em; 
+					font-weight: bold;
+				}
+			}
+			
+			.special-content-title {
+				color: #888;
+				font-size: 0.916em;
+				line-height: 1.375em;
+			}
+			
+			.special-content-quote {
+				margin-top: 0.916em;
+			}
+		}
+	}
+}
+
+.pixel-car {
+	position: relative;
+	background: url("/images/pixel-cars.png") no-repeat;
+  z-index: 2;
+  left: 0;
+  margin-top: 0.6em;
+}
+
+.big_blue {
+	width: 85px;
+	height: 31px;	
+}
+
+.pretty_red {
+	background-position: 0 -32px;
+	width: 87px;
+	height: 30px;
+}
+
+.little_salate {
+	background-position: 0 -61px;
+	height: 31px;
+	width: 71px;
+}
+
+.page-content, .page-footer {
+	.inner { margin-right: 4.833em !important; }
+}
+
+.page-content-wrap {
+	// min-height: 100%;
+	margin-bottom: 9em;
+	background-color: #f6f6f6;
+	
+	.page-content {
+		width: 100%;		
+		position: relative;
+		min-width: 980px;
+		max-width: 1400px;
+		min-height: 100%;
+		
+		h4 { margin-bottom: 0.75em; }		
+		
+		.social_bar {
+			position: relative;
+			
+			a { 
+				text-decoration: none; 
+				margin-right: 0.25em;
+			}
+			a:hover img.normal,
+			a img.disabled { display: none; }
+			a:hover img.disabled { display: inline; }
+		}
+	}
+}
+
+.page-footer-wrap {
+	background-color: #f6f6f6;
+	height: 7em;
+	margin: -9em auto 0 auto;
+	
+	.page-footer {
+		border-top: 1px solid #888;
+		padding-top: 2.3333em;
+		padding-bottom: 2em;
+		font-size: 1.083em;
+		
+		li, .made_by { line-height: 1.666em; }
+		
+		.made_by {
+			color: #888;
+			font-size: 0.916em;
+			
+			a { color: #888; }
+			a:hover { color: #222; }
+		}
+		
+		.copyright {
+			float: right;
+			width: 21%;
+			position: relative;
+			padding-left: 50px;
+			
+			i {
+				position: absolute;
+				background: url("/images/pixel-cars.png") no-repeat;
+				background-position: 0 -92px;
+				top: -2px;
+				left: 0;
+				width: 47px;
+				height: 18px;
+			}
+		}
+	}
+}

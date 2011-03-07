@@ -1,66 +1,100 @@
 !!! 5
 %html{:lang => "en-US"}
-  %head
+	%head
 		%meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
 		%title
-		  = yield (:title)
-		= stylesheet_link_tag "reset", "application"
+			= yield (:title)
+		= stylesheet_link_tag "fonts", "application"
 		= javascript_include_tag :defaults
 		= csrf_meta_tag
-  %body
-		= render :partial => "flashes"
+	%body
+		= render :partial => "shared/flashes"
 		.page-header-wrap
 			.page-header
 				#logo
 				#phone
+					%h4 телефон для справок
+					%span (846) 527-47-23
 				#statements
+					%h1 Мы — это:
+					%ul
+						%li Широкий спектр автомобильных запчастей европейских, японских и корейских производителей.
+						%li Оригинал и достойные аналоги.
+						%li Поставки из оптовых складов Москвы, С.Петербурга, Н.Новгорода и Самары.
+						%li Оптимальные цены.
+						%li Возможность доставки по городу.
 			
 		.border		
-		.page-content-wrap
-			.page-content
-				.special.columns
-					.special-header
-						%h3 Отзывы наших клиентов
-					.column.x1
+		.page-special-wrap
+			.page-special.columns
+				.special-header
+					%h3 Отзывы наших клиентов
+				.column.x1
+					.inner
 						.special-photo
+							%span.round_picture{:style => "height: 58px; width: 58px;"}
+								= image_tag "942_main_w88_h88.jpg", :height => 58, :width => 58, :alt => "Владимир Токмаков"
 						.special-content
 							.special-content-name
+								%h6 Владимир Токмаков
 							.special-content-title
+								директор компании «Токмаков и Ко»
 							.special-content-quote
+								%p
+									«Ребята, вы такие классные! Буду к вам теперь всегда обращаться за деталями».
+							.pixel-car.big_blue
+				
+				.column.x1
+					.inner
+						.special-photo
+							%span.round_picture{:style => "height: 58px; width: 58px;"}
+								= image_tag "444_main_w88_h88.jpg", :height => 58, :width => 58, :alt => "Николай Распутин"
+						.special-content
+							.special-content-name
+								%h6 Николай Распутин
+							.special-content-title
+								менеджер по продажам «РимГрупп»
+							.special-content-quote
+								%p
+									«Str.Lab это не только модная молодежная одежда, обувь и аксессуары, но и активная жизненная позиция, которая проявляется в постоянном взаимодействии с райдерами, фотографами и просто позитивными людьми».
+							.pixel-car.pretty_red
+				
+				.column.x1
+					.inner
+						.special-photo
+							%span.round_picture{:style => "height: 58px; width: 58px;"}
+								= image_tag "629_main_w88_h88.jpg", :height => 58, :width => 58, :alt => "Елена Суворова"
+						.special-content
+							.special-content-name
+								%h6 Елена Суворова
+							.special-content-title
+								кассир года в «Перекрестке»
+							.special-content-quote
+								%p
+									«Пьер Ванни прежде всего известен своими экспериментами с техникой оригами - из бумаги он создает сложные трехмерные скульптуры. В списке его клиентов - Центр Помпиду и New York Times».
+							.pixel-car.little_salate
+
+		
+		.page-content-wrap
+			.page-content				
 				= yield
-				.columns
-					.column.x1
-						.pixel-car.big_blue
-						%h4 Срочно нужна помощь
-						%p ...
-						= image_button "btn_fill-request.png"
-					.column.x1
-						.pixel-car.pretty_red
-						%h4 Как до нас добраться
-						%p ...
-					.column.x1
-						.pixel-car.little_salate
-						%h4 Мы в соцмедиа
-						%p Следите за нашими новостями.
-						.social_bar
-							
 			
 		.page-footer-wrap
 			.page-footer
 				.columns
 					.column.x1
-						%ul
-							%li 
-								Электропочта:
-								= mail_to "support@samaraparts.ru"
-							%li
-								= link_to "Адреса и телефоны". ""
-					.made_by.column.x1
-						Site by
-						= link_to "Adam Miribyan", "http://adammiribyan.com"
-						%small 2011
-					copyright.column.x1
-						©
-						= year
-						ООО «Автомастер»
-						
+						.inner
+							%ul
+								%li 
+									Электропочта:
+									= mail_to "support@samaraparts.ru"
+								%li
+									= link_to "Адреса и телефоны", ""
+					.copyright.column.x1
+						.inner
+							%i
+							= "© #{Time.now.year} ООО «Автомастер»"
+							.made_by
+								Site by
+								= link_to "Adam Miribyan", "http://adammiribyan.com"
+								%small 2011

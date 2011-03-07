@@ -1,2 +1,41 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+- title "Запчасти для иномарок | Автомастер Самара"
+
+.columns
+	.column.x1
+		.inner
+			%h4 Срочно нужна помощь
+			%p 
+				Заполните специальную форму и отправьте нам заявку. 
+				%br/
+				После этого мы вам позвоним и расскажем вам как можно будет в короткие сроки получить нужную деталь. 			
+			= image_tag "btn_fill-request.png"
+	.column.x1
+		.inner
+			%h4 Как до нас добраться
+			%p
+				Наш офис находится по адресу
+				= succeed "." do
+					%strong ул. Карамзинская, дом 231
+				%br/
+				Мы работаем без перерывов и выходных
+				= succeed "." do
+					%strong 24 часа в сутки
+			%p
+				Более подробно об этом на странице 
+				= succeed "." do
+					= link_to "контактной информации", ""
+	.column.x1
+		.inner
+			%h4 Мы в соцмедиа
+			%p Следите за нашими новостями.
+			.social_bar
+				%a{:href => ""}
+					= image_tag "social/flickr.png", :height => 16, :width => 16, :class => "normal"
+					= image_tag "social/flickr_disabled.png",  :height => 16, :width => 16, :class => "disabled"
+				%a{:href => ""}
+					= image_tag "social/twitter.png", :height => 16, :width => 16, :class => "normal"
+					= image_tag "social/twitter_disabled.png",  :height => 16, :width => 16, :class => "disabled"
+				%a{:href => ""}
+					= image_tag "social/vkontakte.png", :height => 16, :width => 16, :class => "normal"
+					= image_tag "social/vkontakte_disabled.png",  :height => 16, :width => 16, :class => "disabled"
+					
