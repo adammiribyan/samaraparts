@@ -12,6 +12,7 @@
 		.page-header-wrap
 			.page-header
 				#logo
+					= link_to_unless_current(image_tag("logo.png"), root_url)
 				#phone
 					%h4 телефон для справок
 					%span (846) 527-47-23
