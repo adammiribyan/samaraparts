@@ -1,10 +1,23 @@
+#coding: utf-8
+
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :current_user
+  helper_method :current_user  
   
-  private
-  	def current_user
-  		@current_user ||= User.find(session[:user_id]) if session[:user_id]
-  	end
+	def current_user
+		@current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
   
+  def deny_access(flash_message = nil)
+    flash[:alert] = flash_message if flash_message
+    redirect_to(root_url)
+  end
+  
+  def authenticate
+    deny_access("Доступ запрещен.") unless signed_in?
+  end
+  
+  def signed_in?
+    ! current_user.nil?
+  end
 end
