@@ -74,6 +74,36 @@ h6 {
   margin-bottom: 0em;
 }
 
+#flash_notice,
+#flash_error,
+#flash_alert {
+  z-index: 100;
+  position: fixed;
+  color: #fff;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  padding: 1em;
+  -moz-box-shadow: 0 1px 2px #333;
+  -webkit-box-shadow: 0 1px 2px #333;
+  box-shadow: 0 1px 2px #333;
+  font-weight: bold;
+}
+
+#flash_notice {
+  background-color: rgb(126,240,77);
+  background-color: rgba(126,240,77,0.98);
+  text-shadow: 0 1px #6C6;
+}
+
+#flash_error,
+#flash_alert {
+  background-color rgb(208,49,43);
+  backgroundcolor: rgba(208,49,43,0.98);
+  border-bottom: solid 1px #C66;
+  text-shadow: 0 1px #C66;
+}
+
 .page-header-wrap, .page-content-wrap, .page-special-wrap, .page-footer-wrap {
 	width: 100%;		
 	min-width: 980px;
