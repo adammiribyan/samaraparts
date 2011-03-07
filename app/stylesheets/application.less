@@ -9,7 +9,7 @@ html, body {
 
 body {
   font-size: 12px;
-  font-family: 'PFAgoraSansProRegular', Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   position: relative;
   background-image: url(/images/d.gif);
 	background-attachment: fixed;
@@ -34,48 +34,48 @@ a:hover {
 
 p {
   font-size: 1em; /* 12px */
-  line-height: 1.5em; /* 18px */
+  line-height: 1.5; /* 18px */
   margin: 0 0 1.5em 0;
 }
 /* 24px - The quick brown fox jumps over the lazy dog */
 h1 {
   font-size: 2em; /* 24px */
-  line-height: 1.5em; /* 36px */
+  line-height: 1.5; /* 36px */
   margin-top: 0.75em;
   margin-bottom: 0em;
 }
 /* 22px - The quick brown fox jumps over the lazy dog */
 h2 {
   font-size: 1.8333em; /* 22px */
-  line-height: 1.6364em; /* 36px */
+  line-height: 1.6364; /* 36px */
   margin-top: 0.8182em;
   margin-bottom: 0em;
 }
 /* 20px - The quick brown fox jumps over the lazy dog */
 h3 {
   font-size: 1.6667em; /* 20px */
-  line-height: 1.8em; /* 36px */
+  line-height: 1.8; /* 36px */
   margin-top: 0.9em;
   margin-bottom: 0em;
 }
 /* 18px - The quick brown fox jumps over the lazy dog */
 h4 {
   font-size: 1.5em; /* 18px */
-  line-height: 1em; /* 18px */
+  line-height: 1; /* 18px */
   margin-top: 1em;
   margin-bottom: 0em;
 }
 /* 16px - The quick brown fox jumps over the lazy dog */
 h5 {
   font-size: 1.3333em; /* 16px */
-  line-height: 1.125em; /* 18px */
+  line-height: 1.125; /* 18px */
   margin-top: 1.125em;
   margin-bottom: 0em;
 }
 /* 14px - The quick brown fox jumps over the lazy dog */
 h6 {
   font-size: 1.1667em; /* 14px */
-  line-height: 1.2857em; /* 18px */
+  line-height: 1.2857; /* 18px */
   margin-top: 1.2857em;
   margin-bottom: 0em;
 }
@@ -126,7 +126,7 @@ h6 {
 				position: block;
 				color: white;
 				font-size: 2em; /* 24px */
-			  line-height: 1.5em; /* 36px */
+			  line-height: 1.5; /* 36px */
 			  margin-top: 0.75em;
 			  margin-bottom: 0em;
 			}			
@@ -146,8 +146,8 @@ h6 {
 			  margin-bottom: 0em;
 			  
 				li {
-					font-family: 'PFAgoraSansProLight', Arial, sans-serif;
-					line-height: 1.125em; /* 18px */
+					font-family: Helvetica, Arial, sans-serif;
+					line-height: 1.125; /* 18px */
 			  	margin-top: .625em;
 					list-style: decimal outside;
 				}
@@ -205,9 +205,11 @@ h6 {
 		
 		.special-photo {
 			position: absolute;
+			vertical-align: top;
+			top: 0;
 			left: 0;
 			height: 58px;
-			width: 58px;
+			width: 58px;			
 		}
 		
 		.special-content {
@@ -224,7 +226,7 @@ h6 {
 			.special-content-title {
 				color: #888;
 				font-size: 0.916em;
-				line-height: 1.375em;
+				line-height: 1.375;
 			}
 			
 			.special-content-quote {
@@ -232,6 +234,14 @@ h6 {
 			}
 		}
 	}
+}
+
+.round_picture {
+	border: 0px;
+	display: block;
+	left: 0px;
+	position: absolute;
+	top: 0px;
 }
 
 .pixel-car {
@@ -293,7 +303,7 @@ h6 {
 
 .page-footer-wrap {
 	background-color: #f6f6f6;
-	height: 7em;
+	height: 8em;
 	margin: -9em auto 0 auto;
 	
 	.page-footer {
@@ -302,11 +312,13 @@ h6 {
 		padding-bottom: 2em;
 		font-size: 1.083em;
 		
-		li, .made_by { line-height: 1.666em; }
+		li { line-height: 1.666; }
 		
 		.made_by {
 			color: #888;
 			font-size: 0.916em;
+			line-height: 1.374;
+			margin-top: 0.526em;
 			
 			a { color: #888; }
 			a:hover { color: #222; }
@@ -316,7 +328,7 @@ h6 {
 			float: right;
 			width: 21%;
 			position: relative;
-			padding-left: 50px;
+			padding-left: 53px;
 			
 			i {
 				position: absolute;
