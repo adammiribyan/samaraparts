@@ -1,2 +1,9 @@
-%h1 Users#new
-%p Find me in app/views/users/new.html.haml
+- title "Регистрация"
+
+%h1 Регистрация нового пользователя
+
+= simple_form_for @user do |f|
+	= f.input :login, :label => "Логин", :required => false
+	= f.input :password, :label => "Пароль", :as => :password, :required => false
+	= f.input :password_confirmation, :label => "Еще раз", :as => :password, :required => false
+	= f.submit "Зарегистрироваться"
