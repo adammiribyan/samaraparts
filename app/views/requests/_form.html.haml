@@ -1,5 +1,6 @@
-= simple_form_for @request do |f|
-	.result_notice
+%h2 Новая заявка	
+= simple_form_for @request do |f|	
+	= f.hint "Все поля обязательны для заполнения."
 	.inputs
 		= f.input :mark, :label => "Марка автомобиля", :required => false
 		= f.input :car_model, :label => "Модель", :required => false
