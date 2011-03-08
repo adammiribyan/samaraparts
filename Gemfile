@@ -10,6 +10,8 @@ gem 'haml-rails'
 gem 'less'
 gem 'simple_form'
 gem 'russian'
+gem 'mini_magick'
+gem 'carrierwave'
 
 gem 'jquery-rails', '~>0.2'
 

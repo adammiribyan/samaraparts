@@ -1,7 +1,8 @@
-= simple_form_for(@feedback) do |f|
+= simple_form_for @feedback, :html => { :multipart => true } do |f|
   .inputs
     = f.input :full_name, :label => "Имя и фамилия", :required => false
     = f.input :title, :label => "Должность и место работы", :required => false
+    = f.input :picture, :label => "Фотография", :as => :file, :required => false
     = f.input :body, :label => "Содержание", :required => false
   .actions
     = f.submit "Сохранить"

@@ -12,7 +12,11 @@
   %tbody
     - @feedbacks.each do |feedback|
       %tr
-        %td= feedback.full_name
+        %td.name          
+          .photo
+            %span.round_picture{:style => "height: 58px; width: 58px;"}
+              = image_tag feedback.picture_url(:thumb) if feedback.picture?
+          %span= feedback.full_name
         %td= feedback.title
         %td= feedback.body
         %td
