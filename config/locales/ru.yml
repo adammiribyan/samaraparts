@@ -1,0 +1,5 @@
+ru:
+	feedbacks:
+		create_succeed: "Отзыв был успешно создан."
+		update_succeed: "Отзыв был успешно изменен."
+		destroy_succeed: "Отзыв был успешно удален."

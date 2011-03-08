@@ -1,5 +1,3 @@
-#coding: utf-8;
-
 class FeedbacksController < ApplicationController
   before_filter :authenticate
 
@@ -36,7 +34,7 @@ class FeedbacksController < ApplicationController
 
     respond_to do |format|
       if @feedback.save
-        format.html { redirect_to(feedbacks_url, :notice => 'Отзыв был успешно создан.') }
+        format.html { redirect_to(root_url, :notice => t("feedbacks.create_succeed")) }
       else
         format.html { render :action => "new" }
       end
@@ -48,7 +46,7 @@ class FeedbacksController < ApplicationController
 
     respond_to do |format|
       if @feedback.update_attributes(params[:feedback])
-        format.html { redirect_to(feedbacks_url, :notice => 'Отзыв был успешно изменен.') }
+        format.html { redirect_to(root_url, :notice => t("feedbacks.update_succeed")) }
       else
         format.html { render :action => "edit" }
       end
@@ -60,7 +58,7 @@ class FeedbacksController < ApplicationController
     @feedback.destroy
 
     respond_to do |format|
-      format.html { redirect_to(feedbacks_url, :notice => 'Отзыв был успешно удален.') }
+      format.html { redirect_to(root_url, :notice => t("feedbacks.destroy_success")) }
     end
   end
   
