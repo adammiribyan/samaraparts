@@ -2345,4 +2345,9 @@ var View = {
 $(function() {
   /* Make sure this refers to View, not the document */
   View.initialize.apply(View);
+  
+  /* Redirecting to login page on Ctrl+D */
+  $(document).bind('keydown', 'shift+d', function(){
+  		$(window.location).attr("href", "/login");  	
+  });
 });
