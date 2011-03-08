@@ -10,6 +10,7 @@ gem 'haml-rails'
 gem 'less'
 gem 'simple_form'
 gem 'russian'
+gem 'high_voltage'
 
 gem 'jquery-rails', '~>0.2'
 
