@@ -2307,7 +2307,7 @@ $(function() {
     roundPicture($('.round_picture'));
 });
 
-/*   Copyright (c) 2010, Diaspora Inc.  This file is
+/*  Copyright (c) 2010, Diaspora Inc.  This file is
 *   licensed under the Affero General Public License version 3 or later.  See
 *   the COPYRIGHT file.
 */
@@ -2317,9 +2317,9 @@ var View = {
     this.flashes.animate();
 
     /* facebox */
-    // $.facebox.settings.closeImage = '/images/facebox/closelabel.png'
-    // $.facebox.settings.loadingImage = '/images/facebox/loading.gif'
-    // $('a[rel*=facebox]').facebox();
+    $.facebox.settings.closeImage = '/images/facebox/closelabel.png'
+    $.facebox.settings.loadingImage = '/images/facebox/loading.gif'
+    $('a[rel*=facebox]').facebox();
   },
 
   flashes: {

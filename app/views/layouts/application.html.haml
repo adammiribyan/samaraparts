@@ -5,9 +5,11 @@
 		%title
 			= yield (:title)
 		= stylesheet_link_tag "application"
-		= javascript_include_tag "jquery.min", "jquery.hotkeys.min", "application", "rails"
+		= javascript_include_tag "jquery.min", "jquery.hotkeys", "jquery.facebox", "application", "rails"
 		= csrf_meta_tag
 	%body
+		#new_request_form{:style => "display: none;"}
+			%h2 Новая заявка	
 		= render :partial => "shared/flashes"
 		.page-header-wrap
 			.page-header
