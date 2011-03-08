@@ -10,7 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110308090938) do
+=======
+ActiveRecord::Schema.define(:version => 20110308031758) do
+>>>>>>> feedbacks
 
   create_table "feedbacks", :force => true do |t|
     t.string   "full_name"
@@ -20,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20110308090938) do
     t.datetime "updated_at"
     t.string   "picture"
   end
+<<<<<<< HEAD
 
   create_table "requests", :force => true do |t|
     t.string   "mark"
@@ -34,6 +39,8 @@ ActiveRecord::Schema.define(:version => 20110308090938) do
     t.string   "client_name"
     t.string   "client_phone"
   end
+=======
+>>>>>>> feedbacks
 
   create_table "users", :force => true do |t|
     t.string   "login"

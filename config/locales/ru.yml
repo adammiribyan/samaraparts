@@ -1,4 +1,5 @@
 ru:
+<<<<<<< HEAD
   support:
     array:
       words_connector: ", "
@@ -66,4 +67,3 @@ ru:
     destroy_succeed: "Вышли успешно."
   users:
     create_succeed: "Регистрация прошла, таки успешно прошла."
-  	

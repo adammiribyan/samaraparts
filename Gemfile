@@ -12,6 +12,9 @@ gem 'simple_form'
 gem 'russian'
 gem 'high_voltage'
 
+gem 'mini_magick'
+gem 'carrierwave'
+
 gem 'jquery-rails', '~>0.2'
 
 gem 'capistrano'

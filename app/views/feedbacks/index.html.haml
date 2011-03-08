@@ -1,0 +1,29 @@
+- title "Все отзывы"
+
+%h1 Все отзывы
+
+%table
+  %thead
+    %tr
+      %th{:width => "15%"} Имя
+      %th{:width => "20%"} Должность
+      %th{:width => "55%"} Содержание
+      %th{:width => "10%"}
+  %tbody
+    - @feedbacks.each do |feedback|
+      %tr
+        %td.name          
+          .photo
+            %span.round_picture{:style => "height: 58px; width: 58px;"}
+              = image_tag feedback.picture_url(:thumb) if feedback.picture?
+          %span= feedback.full_name
+        %td= feedback.title
+        %td= feedback.body
+        %td
+          = link_to 'Изменить', edit_feedback_path(feedback), :style => "color: #060;"
+          %br/
+          = link_to 'Удалить', feedback, :style => "color: red;", :confirm => 'Вы уверены?', :method => :delete
+
+%br
+
+= link_to 'Новый отзыв', new_feedback_path

@@ -29,54 +29,55 @@
 						%li Возможность доставки по городу.
 			
 		.border		
-		.page-special-wrap
-			.page-special.columns
-				.special-header
-					%h3 Отзывы наших клиентов
-				.column.x1
-					.inner
-						.special-photo
-							%span.round_picture{:style => "height: 58px; width: 58px;"}
-								= image_tag "942_main_w88_h88.jpg", :height => 58, :width => 58, :alt => "Владимир Токмаков"
-						.special-content
-							.special-content-name
-								%h6 Владимир Токмаков
-							.special-content-title
-								директор компании «Токмаков и Ко»
-							.special-content-quote
-								%p
-									«Ребята, вы такие классные! Буду к вам теперь всегда обращаться за деталями».
-							.pixel-car.big_blue
+		- if params[:controller] == "welcome"
+			.page-special-wrap
+				.page-special.columns
+					.special-header
+						%h3 Отзывы наших клиентов
+					.column.x1
+						.inner
+							.special-photo
+								%span.round_picture{:style => "height: 58px; width: 58px;"}
+									= image_tag "942_main_w88_h88.jpg", :height => 58, :width => 58, :alt => "Владимир Токмаков"
+							.special-content
+								.special-content-name
+									%h6 Владимир Токмаков
+								.special-content-title
+									директор компании «Токмаков и Ко»
+								.special-content-quote
+									%p
+										«Ребята, вы такие классные! Буду к вам теперь всегда обращаться за деталями».
+								.pixel-car.big_blue
 				
-				.column.x1
-					.inner
-						.special-photo
-							%span.round_picture{:style => "height: 58px; width: 58px;"}
-								= image_tag "444_main_w88_h88.jpg", :height => 58, :width => 58, :alt => "Николай Распутин"
-						.special-content
-							.special-content-name
-								%h6 Николай Распутин
-							.special-content-title
-								менеджер по продажам «РимГрупп»
-							.special-content-quote
-								%p
-									«Str.Lab это не только модная молодежная одежда, обувь и аксессуары, но и активная жизненная позиция, которая проявляется в постоянном взаимодействии с райдерами, фотографами и просто позитивными людьми».
-							.pixel-car.pretty_red
+					.column.x1
+						.inner
+							.special-photo
+								%span.round_picture{:style => "height: 58px; width: 58px;"}
+									= image_tag "444_main_w88_h88.jpg", :height => 58, :width => 58, :alt => "Николай Распутин"
+							.special-content
+								.special-content-name
+									%h6 Николай Распутин
+								.special-content-title
+									менеджер по продажам «РимГрупп»
+								.special-content-quote
+									%p
+										«Str.Lab это не только модная молодежная одежда, обувь и аксессуары, но и активная жизненная позиция, которая проявляется в постоянном взаимодействии с райдерами, фотографами и просто позитивными людьми».
+								.pixel-car.pretty_red
 				
-				.column.x1
-					.inner
-						.special-photo
-							%span.round_picture{:style => "height: 58px; width: 58px;"}
-								= image_tag "629_main_w88_h88.jpg", :height => 58, :width => 58, :alt => "Елена Суворова"
-						.special-content
-							.special-content-name
-								%h6 Елена Суворова
-							.special-content-title
-								кассир года в «Перекрестке»
-							.special-content-quote
-								%p
-									«Пьер Ванни прежде всего известен своими экспериментами с техникой оригами - из бумаги он создает сложные трехмерные скульптуры. В списке его клиентов - Центр Помпиду и New York Times».
-							.pixel-car.little_salate
+					.column.x1
+						.inner
+							.special-photo
+								%span.round_picture{:style => "height: 58px; width: 58px;"}
+									= image_tag "629_main_w88_h88.jpg", :height => 58, :width => 58, :alt => "Елена Суворова"
+							.special-content
+								.special-content-name
+									%h6 Елена Суворова
+								.special-content-title
+									кассир года в «Перекрестке»
+								.special-content-quote
+									%p
+										«Пьер Ванни прежде всего известен своими экспериментами с техникой оригами - из бумаги он создает сложные трехмерные скульптуры. В списке его клиентов - Центр Помпиду и New York Times».
+								.pixel-car.little_salate
 
 		
 		.page-content-wrap
