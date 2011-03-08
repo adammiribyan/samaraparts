@@ -10,7 +10,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110307075542) do
+ActiveRecord::Schema.define(:version => 20110308090938) do
+
+  create_table "feedbacks", :force => true do |t|
+    t.string   "full_name"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture"
+  end
+
+  create_table "requests", :force => true do |t|
+    t.string   "mark"
+    t.string   "car_model"
+    t.integer  "year"
+    t.string   "displacement"
+    t.string   "vin"
+    t.string   "engine_model"
+    t.string   "required_part"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "client_name"
+    t.string   "client_phone"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login"

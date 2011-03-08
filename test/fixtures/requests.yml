@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  mark: MyString
+  car_model: MyString
+  year: 1
+  displacement: MyString
+  vin: MyString
+  engine_model: MyString
+  required_part: MyString
+
+two:
+  mark: MyString
+  car_model: MyString
+  year: 1
+  displacement: MyString
+  vin: MyString
+  engine_model: MyString
+  required_part: MyString

@@ -10,6 +10,7 @@
 	%body
 		#new_request_form{:style => "display: none;"}
 			%h2 Новая заявка	
+			= render :partial => "requests/form"
 		= render :partial => "shared/flashes"
 		.page-header-wrap
 			.page-header

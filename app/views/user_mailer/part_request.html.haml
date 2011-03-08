@@ -1,0 +1,39 @@
+%h2 Заявка на деталь
+%span= I18n.l Time.now.to_date
+%div
+	- if @request.mark.present?
+		%span Марка автомобиля:  
+		= @request.mark
+	%br/
+	- if @request.car_model.present?
+		%span Модель:  
+		= @request.car_model
+	%br/
+	- if @request.year?
+		%span Год:  
+		= @request.year
+	%br/
+	- if @request.displacement.present?
+		%span Объем двигателя:  
+		= @request.displacement
+	%br/
+	- if @request.engine_model.present?
+		%span Модель двигателя:  
+		= @request.engine_model
+	%br/
+	- if @request.vin?
+		%span VIN:  
+		= @request.vin
+	%br/
+	- if @request.required_part.present?
+		%span Требуемая деталь:  
+		= @request.required_part
+	%br/
+	- if @request.client_name.present?
+		%span Имя и фамилия::  
+		= @request.client_name
+	%br/
+	- if @request.client_phone.present?
+		%span Телефон::  
+		= @request.client_phone
+	%br/
