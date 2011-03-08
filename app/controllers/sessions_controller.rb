@@ -8,16 +8,16 @@ class SessionsController < ApplicationController
   	user = User.authenticate(params[:session][:login], params[:session][:password])
   	if user
   		session[:user_id] = user.id
-  		redirect_to root_url, :notice => "Вошли успешно."
+  		redirect_to root_url, :notice => t("sessions.create_succeed")
 		else
-			flash.now.alert = "Неправильный логин или пароль #{params[:login]}"
+			flash.now.alert = t("sessions.create_failed")
 			render "new"
 		end
   end
   
   def destroy
   	session[:user_id] = nil
-  	redirect_to root_url, :notice => "Вышли успешно."
+  	redirect_to root_url, :notice => t("sessions.destroy_succeed")
   end
 
 end
