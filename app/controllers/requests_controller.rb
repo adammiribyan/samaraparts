@@ -7,10 +7,14 @@ class RequestsController < ApplicationController
   	@request = Request.new(params[:request])
   	if @request.save
   		UserMailer.part_request(@request).deliver
-  		flash.now[:notice] = t("requests.create_succeed")
+  		redirect_to @request, :notice => t("requests.create_succeed")
 		else
-			flash.now[:notice] = t("requests.create_failed")
+			redirect_to root_url, :notice => t("requests.create_failed")
 		end
+  end
+  
+  def show
+  	
   end
 
 end
