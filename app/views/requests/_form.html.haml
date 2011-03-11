@@ -1,16 +1,18 @@
 %h2 Новая заявка	
 = simple_form_for @request do |f|	
-	= f.hint "Все поля обязательны для заполнения."
-	.inputs
-		= f.input :mark, :label => "Марка автомобиля", :required => false
-		= f.input :car_model, :label => "Модель", :required => false
-		= f.input :year, :label => "Год", :required => false
-		= f.input :displacement, :label => "Объем двигателя", :required => false
-		= f.input :engine_model, :label => "Модель двигателья", :required => false
-		= f.input :vin, :label => "VIN-код", :required => false
-		= f.input :required_part, :label => "Требуемая деталь", :required => false
-		%hr/
-		= f.input :client_name, :label => "Имя и фамилия", :required => false
-		= f.input :client_phone, :label => "Телефон", :required => false
+	= f.hint "Все поля обязательны для заполнения.", :style => "margin-bottom: 15px;"
+	.columns
+		.column.x2
+			= f.input :mark, :label => "Марка автомобиля", :required => false
+			= f.input :car_model, :label => "Модель", :required => false
+			= f.input :year, :label => "Год", :required => false
+			= f.input :displacement, :label => "Объем двигателя", :required => false
+			= f.input :engine_model, :label => "Модель двигателья", :required => false
+		.column.x2
+			= f.input :vin, :label => "VIN-код", :required => false
+			= f.input :required_part, :label => "Требуемая деталь", :required => false
+			%hr
+			= f.input :client_name, :label => "Имя и фамилия", :required => false
+			= f.input :client_phone, :label => "Телефон", :required => false
 	.actions
 		= f.submit "Отправить"

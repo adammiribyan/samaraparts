@@ -39,7 +39,7 @@ form.simple_form {
 		    font-size: 12px;
 		    letter-spacing: normal;
 		    padding: 8px;
-		    width: 255px;
+		    width: 235px;
 		    zoom: 1;
     	}    	
 	}
@@ -49,7 +49,14 @@ form.simple_form {
 		padding: 4px;
 	}
 	textarea { height: 124px; resize: vertical; } 
-	hr { margin-bottom: 18px; width: 100%; }
+	hr { 
+		margin-bottom: 18px; 
+		width: 100%;
+		border: 0 hidden;
+		border-top: 1px solid #D6D6D6;
+		clear: both;
+		height: 0;
+	}
 	p {
 	    font-size: 13px;
 	    line-height: 18px;
@@ -341,6 +348,7 @@ hr {
 	}
 	
 	.x1 { width: 33%; }
+	.x2 { width: 50%; }
 }
 
 .columns:after {

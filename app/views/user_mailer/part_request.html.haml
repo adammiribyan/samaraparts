@@ -1,5 +1,7 @@
 %h2 Заявка на деталь
 %span= I18n.l Time.now.to_date
+%br/
+%br/
 %div
 	- if @request.mark.present?
 		%span Марка автомобиля:  
@@ -30,10 +32,10 @@
 		= @request.required_part
 	%br/
 	- if @request.client_name.present?
-		%span Имя и фамилия::  
+		%span Имя и фамилия:  
 		= @request.client_name
 	%br/
 	- if @request.client_phone.present?
-		%span Телефон::  
+		%span Телефон: 
 		= @request.client_phone
 	%br/

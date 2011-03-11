@@ -34,7 +34,7 @@ class FeedbacksController < ApplicationController
 
     respond_to do |format|
       if @feedback.save
-        format.html { redirect_to(root_url, :notice => t("feedbacks.create_succeed")) }
+        format.html { redirect_to(feedbacks_url, :notice => t("feedbacks.create_succeed")) }
       else
         format.html { render :action => "new" }
       end
@@ -46,7 +46,7 @@ class FeedbacksController < ApplicationController
 
     respond_to do |format|
       if @feedback.update_attributes(params[:feedback])
-        format.html { redirect_to(root_url, :notice => t("feedbacks.update_succeed")) }
+        format.html { redirect_to(feedbacks_url, :notice => t("feedbacks.update_succeed")) }
       else
         format.html { render :action => "edit" }
       end
