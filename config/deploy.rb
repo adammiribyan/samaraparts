@@ -2,9 +2,9 @@ set :user, "adam"
 
 set :application, "samaraparts"
 
-role :app, "auto.adammiribyan.com"
-role :web, "auto.adammiribyan.com"
-role :db,  "auto.adammiribyan.com", :primary => true
+role :app, "samaraparts.ru"
+role :web, "samaraparts.ru"
+role :db,  "samaraparts.ru", :primary => true
 
 set :scm, "git"
 set :repository,  "git@github.com:adammiribyan/samaraparts.git"
@@ -17,7 +17,7 @@ set :keep_releases, 10
 set :use_sudo, false
 
 set :branch, "master"
-set :deploy_to, "/home/#{user}/webapps/auto.adammiribyan"
+set :deploy_to, "/home/#{user}/webapps/#{application}"
 
 set :shared_children, %w(system log pids config db)
 
@@ -59,9 +59,9 @@ namespace :db do
     put db_config.result, "#{shared_path}/config/database.yml"
   end
   
-  desc "Moving sqlite3 data to shared path after uploading a new release"
+  desc "Moving sqlite3 data to shared path before uploading a new release"
   task :move_to_shared do
-    run "#{sudo} mv #{db_path}production.sqlite3 #{db_shared_path}production.sqlite3"
+    run "#{sudo} mv #{db_path}production.sqlite3 #{shared_db_path}production.sqlite3"
   end
 end
 
@@ -70,7 +70,7 @@ unless exists?(:config_files)
 end
 
 unless exists?(:shared_dirs)
-	set :shared_dirs, %w(uploads stylesheets)
+	set :shared_dirs, %w(uploads)
 end
 
 namespace :symlink do
@@ -111,8 +111,9 @@ namespace :symlink do
   end
   
     
-  desk "Create link to db/production.sqlite3 for saving data after each deploy command"
-  task :shared_data_file, :roles => :app do    
+  desc "Create link to db/production.sqlite3 for saving data after each deploy command"
+  task :shared_data_file, :roles => :app do
+    run "#{sudo} rm -f #{db_path}production.sqlite3" 
     run "#{sudo} ln -nfs #{shared_db_path}production.sqlite3 #{db_path}production.sqlite3"
   end
   
@@ -131,7 +132,7 @@ def shared_config_path
 end
 
 def shared_db_path
-  "#{shated_path}/db/"
+  "#{shared_path}/db/"
 end
 
 namespace :deploy do
@@ -145,8 +146,7 @@ after "deploy:setup" do
   db.create_yaml if Capistrano::CLI.ui.agree("Create database.yml in app's shared path?")  
 end
 after "deploy:setup", "symlink:create_shared_dirs"
-after "deploy", "db:move_to_shared"
-after "deploy:symlink", "deploy:cleanup"
 after "deploy:update_code", "symlink:shared_directories"
 after "deploy:update_code", "symlink:shared_data_file"
 after "deploy:update_code", "symlink:shared_config_files"
+after "deploy", "deploy:cleanup"
