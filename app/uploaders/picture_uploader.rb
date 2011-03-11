@@ -17,8 +17,8 @@ class PictureUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
-  def filename
-    model.id.to_s + File.extname(@filename) if @filename
-  end
+#  def filename
+#    model.id.to_s + File.extname(@filename) if @filename
+#  end
 
 end

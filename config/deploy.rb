@@ -2,9 +2,9 @@ set :user, "adam"
 
 set :application, "samaraparts"
 
-role :app, "95.163.18.113"
-role :web, "95.163.18.113"
-role :db,  "95.163.18.113", :primary => true
+role :app, "auto.adammiribyan.com"
+role :web, "auto.adammiribyan.com"
+role :db,  "auto.adammiribyan.com", :primary => true
 
 set :scm, "git"
 set :repository,  "git@github.com:adammiribyan/samaraparts.git"
@@ -17,7 +17,7 @@ set :keep_releases, 10
 set :use_sudo, false
 
 set :branch, "master"
-set :deploy_to, "/home/#{user}/webapps/#{application}"
+set :deploy_to, "/home/#{user}/webapps/auto.adammiribyan"
 
 set :shared_children, %w(system log pids config)
 
@@ -65,7 +65,7 @@ unless exists?(:config_files)
 end
 
 unless exists?(:shared_dirs)
-	set :shared_dirs, %w(uploads)
+	set :shared_dirs, %w(uploads stylesheets)
 end
 
 namespace :symlink do
