@@ -97,7 +97,7 @@ namespace :symlink do
   task :shared_config_files, :roles => :app do
     config_files.each do |file_path|
       begin
-        run "#{sudo} rm #{config_path}#{file_path}"         
+        run "#{sudo} rm -f #{config_path}#{file_path}"         
         run "#{sudo} ln -nfs #{shared_config_path}#{file_path} #{config_path}#{file_path}"
       rescue
         puts "Problem linking to #{file_path}. Be sure file already exists in #{shared_config_path}."
