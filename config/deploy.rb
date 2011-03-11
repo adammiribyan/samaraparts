@@ -19,7 +19,7 @@ set :use_sudo, false
 set :branch, "master"
 set :deploy_to, "/home/#{user}/webapps/auto.adammiribyan"
 
-set :shared_children, %w(system log pids config)
+set :shared_children, %w(system log pids config db)
 
 # automatically sets the environment based on presence of 
 # :stage (multistage gem), :rails_env, or RAILS_ENV variable; otherwise defaults to 'production'
@@ -57,6 +57,11 @@ namespace :db do
     EOF
 
     put db_config.result, "#{shared_path}/config/database.yml"
+  end
+  
+  desc "Moving sqlite3 data to shared path after uploading a new release"
+  task :move_to_shared do
+    run "#{sudo} mv #{db_path}production.sqlite3 #{db_shared_path}production.sqlite3"
   end
 end
 
@@ -104,14 +109,29 @@ namespace :symlink do
       end
     end if config_files
   end
+  
+    
+  desk "Create link to db/production.sqlite3 for saving data after each deploy command"
+  task :shared_data_file, :roles => :app do    
+    run "#{sudo} ln -nfs #{shared_db_path}production.sqlite3 #{db_path}production.sqlite3"
+  end
+  
 end
 
 def config_path
   "#{current_release}/config/"
 end
 
+def db_path
+  "#{current_release}/db/"
+end
+
 def shared_config_path
   "#{shared_path}/config/"
+end
+
+def shared_db_path
+  "#{shated_path}/db/"
 end
 
 namespace :deploy do
@@ -125,6 +145,8 @@ after "deploy:setup" do
   db.create_yaml if Capistrano::CLI.ui.agree("Create database.yml in app's shared path?")  
 end
 after "deploy:setup", "symlink:create_shared_dirs"
-after "deploy", "deploy:cleanup"
+after "deploy", "db:move_to_shared"
+after "deploy:symlink", "deploy:cleanup"
 after "deploy:update_code", "symlink:shared_directories"
+after "deploy:update_code", "symlink:shared_data_file"
 after "deploy:update_code", "symlink:shared_config_files"
