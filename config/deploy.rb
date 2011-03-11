@@ -19,6 +19,8 @@ set :use_sudo, false
 set :branch, "master"
 set :deploy_to, "/home/#{user}/webapps/#{application}"
 
+set :shared_children, %w(system log pids config)
+
 # automatically sets the environment based on presence of 
 # :stage (multistage gem), :rails_env, or RAILS_ENV variable; otherwise defaults to 'production'
 def environment  
