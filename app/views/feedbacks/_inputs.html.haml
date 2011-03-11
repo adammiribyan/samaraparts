@@ -2,7 +2,13 @@
   .inputs
     = f.input :full_name, :label => "Имя и фамилия", :required => false
     = f.input :title, :label => "Должность и место работы", :required => false
+    
     = f.input :picture, :label => "Фотография", :as => :file, :required => false
+    = f.input :picture_cache, :as => :hidden
+    - if @show_picture_preview
+      .picture_preview
+        = image_tag @feedback.picture_url(:thumb) if @feedback.picture?
+          
     = f.input :body, :label => "Содержание", :required => false
   .actions
     = f.submit "Сохранить"

@@ -86,14 +86,10 @@ form.simple_form {
 	.small {
 		display: inline-block;
 	}
-
-	#request_doc_seria { width: 40px; }
-	#request_doc_number { width: 195px; }
-	#request_reg_house, #request_reg_flat, #request_fact_house, #request_fact_flat {
-		width: 65px;
-	}
-	#request_reg_building, #request_fact_building {
-		width: 80px;
+	
+	.picture_preview {
+		margin-bottom: 20px;
+		position: relative;
 	}
 }
 
@@ -120,8 +116,6 @@ table {
 		overflow: auto !important;		
 		tr.emphasized { background-color: #fffdea; }
 		tr {
-			cursor: pointer;
-
 			td { 
 				padding: 15px 0px 15px 0px;
 				vertical-align: baseline; }
@@ -149,6 +143,16 @@ table {
 			padding: 0;
 			background: none;
 		}
+	}
+	
+	.photo {
+		position: relative;
+		margin: 5px 0;
+		zoom: 1;
+	}
+	
+	.name {
+		font-weight: bold;
 	}
 }
 

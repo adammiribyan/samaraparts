@@ -1,5 +1,6 @@
 class FeedbacksController < ApplicationController
   before_filter :authenticate
+  before_filter :show_picture_preview, :only => [:edit, :update]
 
   def index
     @feedbacks = Feedback.all
@@ -61,5 +62,11 @@ class FeedbacksController < ApplicationController
       format.html { redirect_to(root_url, :notice => t("feedbacks.destroy_success")) }
     end
   end
+  
+  private
+  
+    def show_picture_preview
+      @show_picture_preview = true
+    end
   
 end
