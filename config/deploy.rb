@@ -19,6 +19,45 @@ set :use_sudo, false
 set :branch, "master"
 set :deploy_to, "/home/#{user}/webapps/#{application}"
 
+# automatically sets the environment based on presence of 
+# :stage (multistage gem), :rails_env, or RAILS_ENV variable; otherwise defaults to 'production'
+def environment  
+  if exists?(:stage)
+    stage
+  elsif exists?(:rails_env)
+    rails_env  
+  elsif(ENV['RAILS_ENV'])
+    ENV['RAILS_ENV']
+  else
+    "production"  
+  end
+end
+
+# Execute a rake task, example:
+#   run_rake log:clear
+def run_rake(task)
+  run "cd #{current_path} && rake #{task} RAILS_ENV=#{environment}"
+end
+
+require 'erb'
+namespace :db do
+  desc "Create database.yml in shared path with settings for current stage and test env"
+  task :create_yaml do    
+    db_config = ERB.new <<-EOF
+    base: &base
+      adapter: sqlite3
+      database: db/#{environment}.sqlite3
+		  pool: 5
+		  timeout: 5000
+
+    #{environment}:
+      <<: *base
+    EOF
+
+    put db_config.result, "#{shared_path}/config/database.yml"
+  end
+end
+
 unless exists?(:config_files)
   set :config_files, %w(database.yml)
 end
@@ -80,6 +119,9 @@ namespace :deploy do
   end
 end
 
+after "deploy:setup" do
+  db.create_yaml if Capistrano::CLI.ui.agree("Create database.yml in app's shared path?")  
+end
 after "deploy:setup", "symlink:create_shared_dirs"
 after "deploy", "deploy:cleanup"
 after "deploy:update_code", "symlink:shared_directories"
