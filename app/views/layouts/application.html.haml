@@ -18,17 +18,18 @@
 					= link_to_unless_current(image_tag("logo.png"), root_url)
 				#phone
 					%h4 телефон для справок
-					%span (846) 527-47-23
+					%span (846) 997-65-42
 				#statements
 					%h1 Мы — это:
 					%ul
 						%li Широкий спектр автомобильных запчастей европейских, японских и корейских производителей.
 						%li Оригинал и достойные аналоги.
-						%li Поставки из оптовых складов Москвы, С.Петербурга, Н.Новгорода и Самары.
+						%li Поставки из Москвы, С.Петербурга, Н.Новгорода и Самары.
+						%li Багажники и фаркопы.
 						%li Оптимальные цены.
 						%li Возможность доставки по городу.
 			
-		.border		
+		.border
 		- if params[:controller] == "welcome"
 			.page-special-wrap
 				.page-special.columns
@@ -51,13 +52,12 @@
 										= surround '«', '»' do
 											= feedback.body
 									%div{:class => "pixel-car #{@cars[i]}"}
-
 		
 		.page-content-wrap
 			.page-content	
 				- if current_user
 					= link_to "Выйти", logout_path		
-				= yield
+				= yield		
 			
 		.page-footer-wrap
 			.page-footer
@@ -67,9 +67,9 @@
 							%ul
 								%li 
 									Электропочта:
-									= mail_to "support@samaraparts.ru"
+									= mail_to "info@samaraparts.ru"
 								%li
-									= link_to "Адреса и телефоны", page_path("contacts")
+									= link_to_unless_current "Адреса и телефоны", page_path("contacts")
 					.copyright.column.x1
 						.inner
 							%i

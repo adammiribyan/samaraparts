@@ -15,11 +15,12 @@
 			%p
 				Наш офис находится по адресу
 				= succeed "." do
-					%strong ул. Карамзинская, дом 231
+					%strong Южный проезд, 164
 				%br/
-				Мы работаем без перерывов и выходных
-				= succeed "." do
-					%strong 24 часа в сутки
+				Мы работаем с понедельника по пятницу 
+				%span.nobr с 9 до 18, 
+				в субботу — 
+				%span.nobr с 9 до 16 часов.
 			%p
 				Более подробно об этом на странице 
 				= succeed "." do
@@ -38,4 +39,3 @@
 				%a{:href => ""}
 					= image_tag "social/vkontakte.png", :height => 16, :width => 16, :class => "normal"
 					= image_tag "social/vkontakte_disabled.png",  :height => 16, :width => 16, :class => "disabled"
-					

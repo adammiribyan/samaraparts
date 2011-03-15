@@ -46,4 +46,16 @@ Samaraparts::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  config.action_mailer.default_url_options = { :host => "samaraparts.ru" }  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.yandex.ru",
+    :port                 => 25,
+    :domain               => 'samaraparts.ru',
+    :user_name            => 'info',
+    :password             => 'samaraparts163',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true
+  }
 end
