@@ -1,7 +1,7 @@
 #coding: utf-8
 
 class UserMailer < ActionMailer::Base
-	default :from => "from@example.com"
+	default :from => "info@samaraparts.ru"
 	
   def part_request(request)
   	@request = request

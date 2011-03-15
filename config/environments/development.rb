@@ -29,8 +29,8 @@ Samaraparts::Application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'samaraparts.ru',
-    :user_name            => 'adam.miribyan',
-    :password             => 'god.love.sex.',
+    :user_name            => 'samaraparts.ru',
+    :password             => 'samaraparts163',
     :authentication       => 'plain',
     :enable_starttls_auto => true  
   }
