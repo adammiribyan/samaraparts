@@ -1,4 +1,4 @@
-1301239378
+1302780683
 AddClientNameAndPhoneToRequests	/home/adam/Projects/samaraparts/db/migrate/20110308090938_add_client_name_and_phone_to_requests.rb	class AddClientNameAndPhoneToRequests 
 AddPictureToFeedbacks	/home/adam/Projects/samaraparts/db/migrate/20110308031758_add_picture_to_feedbacks.rb	class AddPictureToFeedbacks 
 Application	/home/adam/Projects/samaraparts/config/application.rb	  class Application 
