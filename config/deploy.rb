@@ -17,7 +17,7 @@ set :keep_releases, 10
 set :use_sudo, false
 
 set :branch, "master"
-set :deploy_to, "/home/#{user}/webapps/#{application}"
+set :deploy_to, "/home/#{user}/Volumes/bartsev/#{application}"
 
 set :shared_children, %w(system log pids config db)
 
