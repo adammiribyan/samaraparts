@@ -2,9 +2,9 @@ set :user, "adam"
 
 set :application, "samaraparts"
 
-role :app, "samaraparts.ru"
-role :web, "samaraparts.ru"
-role :db,  "samaraparts.ru", :primary => true
+role :app, "173.248.190.223"
+role :web, "173.248.190.223"
+role :db,  "173.248.190.223", :primary => true
 
 set :scm, "git"
 set :repository,  "git@github.com:adammiribyan/samaraparts.git"
