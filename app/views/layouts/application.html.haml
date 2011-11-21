@@ -8,6 +8,7 @@
 		= javascript_include_tag "jquery.min", "jquery.hotkeys", "jquery.facebox", "application", "rails"
 		= csrf_meta_tag
 	%body
+		= render :partial => "application/metrika"
 		- if params[:controller] == "welcome"
 			#new_request_form{:style => "display: none;"}
 				= render :partial => "requests/form"
